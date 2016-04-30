@@ -1,0 +1,75 @@
+#%RAML 0.8
+title: Car's shop
+baseUri: x.x
+version: v1
+
+
+/cars:
+  get:
+    description: Retrieve a list of the cars
+    queryParameters:
+      brand:
+        displayName: Brand
+        type: integer
+        description: filter the cars by brand   
+        example: 12
+        required: false  
+        
+  post:
+    description: Add a new car
+    queryParameters:
+      model:
+        displayName: Model
+        type: string
+        required: true
+      color:
+        displayName: Color
+        type: string
+        required: true
+      price:
+        displayName: Price
+        type: integer
+        required: true
+      brand:
+        displayName: Brand
+        type: string
+        required: true
+ 
+  put:
+    description: change the car
+    queryParameters:
+      id:
+        displayName: Id
+        type: integer        
+        example: 12
+        required: true
+      madel:
+        displayName: Model
+        type: string
+        description: brand of the car
+        example: BMW
+        required: false
+      color:
+        displayName: Color
+        type: string
+        required: false
+      price:
+        displayName: Price
+        type: integer
+        required: false
+      brand:
+        displayName: Brand
+        type: string
+        description: brand of the car
+        example: BMW
+        required: false
+      
+  delete:
+    description: delete the car
+    queryParameters:
+        id:
+          displayName: Id
+          type: integer
+          description: car's id
+          example: 12
+          required: true
