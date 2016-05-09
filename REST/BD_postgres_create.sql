@@ -23,3 +23,4 @@ CREATE TABLE "Cars" (
 
 
 ALTER TABLE "Cars" ADD CONSTRAINT "Cars_fk0" FOREIGN KEY ("brand_id") REFERENCES "Brand"("id");
+
