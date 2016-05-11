@@ -2,6 +2,7 @@ package com.shop.car;
 
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.context.annotation.Bean;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -21,6 +22,7 @@ public class Car implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
+
     private long carId;
     @Column(name = "model")
     @NotBlank (message = "please add model")
