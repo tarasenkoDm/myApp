@@ -16,7 +16,7 @@
     <context:property-placeholder location="classpath:/jdbc.properties"/>
     <context:component-scan base-package="com.shop.car"/>
     <context:annotation-config/>
-    <mvc:annotation-driven /> <!-- ДОБАВИЛ если чего удалить -->
+    <mvc:annotation-driven />
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${driver}"/>

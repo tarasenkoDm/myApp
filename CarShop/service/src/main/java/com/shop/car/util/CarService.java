@@ -14,9 +14,9 @@ public interface CarService {
 
     public void updateCar(Car car);
 
-    public Car getCarById(long carId);
+    public Car getCarById(int carId);
 
     public List<Car> getAllCars();
 
-    public void deleteCar(long carId);
+    public void deleteCar(int carId);
 }

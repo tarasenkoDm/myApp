@@ -152,6 +152,13 @@
             <version>9.4-1201-jdbc41</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.6.2</version>
+        </dependency>
+
+
 
 
 

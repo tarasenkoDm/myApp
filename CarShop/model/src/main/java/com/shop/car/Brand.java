@@ -60,4 +60,14 @@ public class Brand implements Serializable{
     public void setCarList(Set<Car> carList) {
         this.carList = carList;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("Brand");
+        sb.append("{id=").append(brandId);
+        sb.append(", brand='").append(brand).append('\'');
+        sb.append("}");
+        return sb.toString();
+    }
 }
