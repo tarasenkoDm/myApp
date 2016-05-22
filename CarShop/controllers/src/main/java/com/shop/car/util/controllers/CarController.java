@@ -32,6 +32,7 @@ public class CarController {
 
     private List<Car> getCars() {
         List<Car> carList = carService.getAllCars();
+        System.out.println(carList);
         return carList;
     }
 }

@@ -18,6 +18,10 @@
     <context:annotation-config/>
     <mvc:annotation-driven/>
 
+    <!--Add-->
+    <mvc:default-servlet-handler/>
+    <!--Add-->
+
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${driver}"/>
         <property name="url" value="${url}"/>
@@ -37,5 +41,6 @@
           class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+
 
 </beans>
