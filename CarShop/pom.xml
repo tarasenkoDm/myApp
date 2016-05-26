@@ -197,6 +197,15 @@
             <scope>test</scope>
         </dependency>
 
+        <!--jetty - DB-->
+        <!-- http://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server -->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>9.3.9.v20160517</version>
+        </dependency>
+
+
 
     </dependencies>
 
