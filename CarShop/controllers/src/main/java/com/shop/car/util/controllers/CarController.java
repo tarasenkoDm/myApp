@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 
 @Controller
 public class CarController {
 
-    @Autowired
+//    @Autowired
     private CarService carService;
 
     @RequestMapping(value = "/allCars.html", method = RequestMethod.GET)
@@ -31,7 +32,8 @@ public class CarController {
     }
 
     private List<Car> getCars() {
-        List<Car> carList = carService.getAllCars();
+        List<Car> carList = new LinkedList<>();
+        carList = carService.getAllCars();
         System.out.println(carList);
         return carList;
     }

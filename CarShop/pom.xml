@@ -44,6 +44,24 @@
                 <version>3.5.1</version>
             </plugin>
 
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>4.0.1</version>
+                <configuration>
+                    <url>jdbc:postgresql://localhost:5432/bdtachki</url>
+                    <user>postgres</user>
+                    <password>postgres</password>
+
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>9.4-1206-jdbc42</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
 
         </plugins>
     </build>
@@ -198,11 +216,32 @@
         </dependency>
 
         <!--jetty - DB-->
-        <!-- http://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server -->
+
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
             <version>9.3.9.v20160517</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-maven-plugin</artifactId>
+            <version>4.0.1</version>
+            <!--<configuration>-->
+
+            <!--</configuration>-->
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
 
 

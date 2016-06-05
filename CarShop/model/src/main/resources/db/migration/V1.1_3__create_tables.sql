@@ -2,6 +2,12 @@
 
 set schema 'tachkischema';
 
+drop table if exists brand cascade;
+
+drop table if exists "cars" cascade;
+
+
+
 CREATE TABLE "brand" (
 	"id" bigint NOT NULL,
 	"brand" VARCHAR NOT NULL,

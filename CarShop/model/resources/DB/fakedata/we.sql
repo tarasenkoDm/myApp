@@ -1,4 +1,4 @@
 
-TRUNCATE TABLE Cars RESTART IDENTITY CASCADE;
+TRUNCATE TABLE cars RESTART IDENTITY CASCADE;
 
-INSERT INTO tachkischema.Cars (id, brand) VALUES (1, AUDI);
+INSERT INTO tachkischema.cars (id, brand) VALUES (1, AUDI);
