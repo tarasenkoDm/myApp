@@ -9,10 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * @author Tarasenko Dmitriy <lordtda@gmail.com>
- * @version 0.1
- */
 
 @Repository
 @Transactional

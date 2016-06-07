@@ -1,11 +1,15 @@
 package com.shop.car.util.controllers;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.shop.car.Car;
+import com.shop.car.util.CarService;
+import com.shop.car.util.Impl.CarServiceImpl;
 import org.apache.log4j.Logger;
 import org.flywaydb.core.Flyway;
 import org.json.JSONObject;
 import org.junit.*;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
@@ -50,7 +54,11 @@ public class CarControllerTest {
     @Test
     public void getAllCars() throws Exception {
 
-
+        CarService carService = new CarServiceImpl();
+        List<Car> original = carService.getAllCars();
+        for (Car car : original) {
+            System.out.println(car);
+        }
 
         int expected = 5;
         int actual = 5;
@@ -62,15 +70,13 @@ public class CarControllerTest {
     @Test
     public void deleteCar() throws Exception {
 
-        CarController carController = new CarController();
-        carController.deleteCar(5);
+//        CarController carController = new CarController();
+//        carController.deleteCar(5);
 
         int expected = 5;
         int actual = 5;
 
         assertEquals("Test changeFirstLastWordsInSentence", expected, actual);
-
-
 
 
     }
@@ -122,9 +128,8 @@ public class CarControllerTest {
 
     private static void dumpCarTable(String dumpName) {
 
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-
-        JSONObject resultJson = new JSONObject();
         List<Car> carList = new LinkedList<>();
 
         Connection connection = getConnection();
@@ -145,9 +150,10 @@ public class CarControllerTest {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        resultJson.put("cars", carList);
+
+        String carsDump = gson.toJson(carList);
         try (FileWriter writer = new FileWriter(dumpName)) {
-            writer.write(resultJson.toString());
+            writer.write(carsDump);
             writer.flush();
             writer.close();
         } catch (IOException ex) {
@@ -155,7 +161,7 @@ public class CarControllerTest {
         }
     }
 
-    private static void deleteCarById(int id){
+    private static void deleteCarById(int id) {
         Connection connection = getConnection();
         PreparedStatement preparedStatement = null;
         try {
